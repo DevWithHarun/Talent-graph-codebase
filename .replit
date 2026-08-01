@@ -1,0 +1,53 @@
+modules = ["nodejs-20", "web", "nix", "python-3.11"]
+[agent]
+expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+integrations = ["javascript_gemini_ai_integrations:2.0.0"]
+
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[userenv]
+
+[userenv.shared]
+BULKSMS_SENDER_ID = "XpressKard"
+VAPID_SUBJECT = "mailto:admin@talentgraph.ke"
+NEXT_PUBLIC_VAPID_PUBLIC_KEY = "BCR9rT5Xsja2n2JkZ-pECoKUIans7COp1InTe4eNKdOYwl_t3ZWtt5fq1GswCZ7mjnnptlED8UTSK5psuhdrc5c"
+NEXT_PUBLIC_APP_URL = "https://talent-graph.vercel.app"
+NEXT_PUBLIC_FIREBASE_API_KEY = "AIzaSyDLmugbxMX_0QGxxKRzuUR-9nqtiFBgDQ0"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID = "studio-1186001190-d08bc"
+
+[objectStorage]
+defaultBucketID = "replit-objstore-861fa5b4-5e0b-48d7-9cb7-f5ce499e7c4b"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 300000

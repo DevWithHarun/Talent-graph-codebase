@@ -1,0 +1,26 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ilReXfctfVxWUhgSCYmrt"
+uri = "file://TalentGraph_Terms_of_Use.docx"
+type = "word_document"
+title = "Talent Graph — Terms of Use"
+
+[[outputs]]
+id = "Rwht9kt7wQvVpoEeU33Lw"
+uri = "file://TalentGraph_Privacy_Policy.docx"
+type = "word_document"
+title = "Talent Graph — Privacy Policy"
+
+[[outputs]]
+id = "6GlOjFhXliDH0vuKUT3KH"
+uri = "file://docs/marketing-and-support-feature-guide.md"
+type = "text"
+title = "Marketing & Client Support Feature Guide"
+
+[[outputs]]
+id = "NBPk_NOrKRtXncSh9Ail2"
+uri = "file://ARCHITECTURE.md"
+type = "text"
+title = "Talent Graph Kenya — Technical Architecture"
